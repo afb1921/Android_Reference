@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import org.afb.androidreference.ReferenceFragments.ImageReferenceActivity;
+import org.afb.androidreference.ReferenceFragments.ImageReferenceFragment;
 import org.afb.androidreference.dummy.DummyContent;
 
 import java.util.List;
@@ -89,30 +91,59 @@ public class ItemListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mItem = mValues.get(position);
-            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+            switch (position){
+                case 0:
+                    holder.mItem = new DummyContent.DummyItem("0","Special Case", "Details");
+                    holder.mIdView.setText(holder.mItem.id);
+                    holder.mContentView.setText(holder.mItem.content);
 
-            holder.mView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (mTwoPane) {
-                        Bundle arguments = new Bundle();
-                        arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
-                        ItemDetailFragment fragment = new ItemDetailFragment();
-                        fragment.setArguments(arguments);
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.item_detail_container, fragment)
-                                .commit();
-                    } else {
-                        Context context = v.getContext();
-                        Intent intent = new Intent(context, ItemDetailActivity.class);
-                        intent.putExtra(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                    holder.mView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (mTwoPane) {
+                                Bundle arguments = new Bundle();
+                                arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                                ImageReferenceFragment fragment = new ImageReferenceFragment();
+                                fragment.setArguments(arguments);
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.item_detail_container, fragment)
+                                        .commit();
+                            } else {
+                                Context context = v.getContext();
+                                Intent intent = new Intent(context, ImageReferenceActivity.class);
+                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
 
-                        context.startActivity(intent);
+                                context.startActivity(intent);
+                            }
+                        }
+                    });
+                    break;
+                default:
+                holder.mItem = mValues.get(position);
+                holder.mIdView.setText(mValues.get(position).id);
+                holder.mContentView.setText(mValues.get(position).content);
+
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (mTwoPane) {
+                            Bundle arguments = new Bundle();
+                            arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                            ItemDetailFragment fragment = new ItemDetailFragment();
+                            fragment.setArguments(arguments);
+                            getSupportFragmentManager().beginTransaction()
+                                    .replace(R.id.item_detail_container, fragment)
+                                    .commit();
+                        } else {
+                            Context context = v.getContext();
+                            Intent intent = new Intent(context, ItemDetailActivity.class);
+                            intent.putExtra(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+
+                            context.startActivity(intent);
+                        }
                     }
-                }
-            });
+                });
+            }
         }
 
         @Override

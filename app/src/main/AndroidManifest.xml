@@ -27,6 +27,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.afb.androidreference.ItemListActivity" />
         </activity>
+        <activity
+            android:name=".ReferenceFragments.ImageReferenceActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".ItemListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.afb.androidreference.ReferenceFragments.ImageReferenceActivity" />
+        </activity>
     </application>
 
 </manifest>
