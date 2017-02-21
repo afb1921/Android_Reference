@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.afb.androidreference.ItemDetailActivity;
@@ -61,11 +62,10 @@ public class ImageReferenceFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.image_reference, container, false);
 
-//        // Show the dummy content as text in a TextView.
-//        if (mItem != null) {
-//            ((TextView) rootView.findViewById(R.id.image_reference)).setText(mItem.details);
-//        }
-
+        ImageView imageView = (ImageView) rootView.findViewById(R.id.image_reference);
+        imageView.setContentDescription("American Foundation for the Blind - Expanding possibilities for people with vision loss");
+        CollapsingToolbarLayout toolbarLayout = (CollapsingToolbarLayout) getActivity().findViewById(R.id.toolbar_layout);
+        toolbarLayout.setTitle("Images");
         return rootView;
     }
 }

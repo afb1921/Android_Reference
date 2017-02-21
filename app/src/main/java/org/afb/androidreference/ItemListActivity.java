@@ -93,8 +93,8 @@ public class ItemListActivity extends AppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, int position) {
             switch (position){
                 case 0:
-                    holder.mItem = new DummyContent.DummyItem("0","Special Case", "Details");
-                    holder.mIdView.setText(holder.mItem.id);
+                    holder.mItem = new DummyContent.DummyItem(String.valueOf(position + 1),"Images", "Details");
+                    //holder.mIdView.setText(holder.mItem.id);
                     holder.mContentView.setText(holder.mItem.content);
 
                     holder.mView.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +120,6 @@ public class ItemListActivity extends AppCompatActivity {
                     break;
                 default:
                 holder.mItem = mValues.get(position);
-                holder.mIdView.setText(mValues.get(position).id);
                 holder.mContentView.setText(mValues.get(position).content);
 
                 holder.mView.setOnClickListener(new View.OnClickListener() {
@@ -153,14 +152,12 @@ public class ItemListActivity extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             public final View mView;
-            public final TextView mIdView;
             public final TextView mContentView;
             public DummyContent.DummyItem mItem;
 
             public ViewHolder(View view) {
                 super(view);
                 mView = view;
-                mIdView = (TextView) view.findViewById(R.id.id);
                 mContentView = (TextView) view.findViewById(R.id.content);
             }
 

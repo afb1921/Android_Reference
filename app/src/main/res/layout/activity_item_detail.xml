@@ -47,6 +47,7 @@
         android:layout_gravity="center_vertical|start"
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/stat_notify_chat"
+        android:contentDescription="action"
         app:layout_anchor="@+id/item_detail_container"
         app:layout_anchorGravity="top|end" />
 

@@ -7,4 +7,5 @@
     android:padding="16dp"
     android:textIsSelectable="true"
     tools:context=".ItemListActivity"
-    android:src="@drawable/afblogo" />
+    android:src="@drawable/afblogo"
+    android:contentDescription="American Foundation for the Blind - Expanding possibilities for people with vision loss" />

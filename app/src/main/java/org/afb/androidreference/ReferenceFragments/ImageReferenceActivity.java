@@ -37,7 +37,6 @@ public class ImageReferenceActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
