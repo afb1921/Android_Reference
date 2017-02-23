@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import org.afb.androidreference.ReferenceFragments.CheckboxReferenceActivity;
+import org.afb.androidreference.ReferenceFragments.CheckboxReferenceFragment;
 import org.afb.androidreference.ReferenceFragments.ImageReferenceActivity;
 import org.afb.androidreference.ReferenceFragments.ImageReferenceFragment;
 import org.afb.androidreference.dummy.DummyContent;
@@ -111,6 +113,32 @@ public class ItemListActivity extends AppCompatActivity {
                             } else {
                                 Context context = v.getContext();
                                 Intent intent = new Intent(context, ImageReferenceActivity.class);
+                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+
+                                context.startActivity(intent);
+                            }
+                        }
+                    });
+                    break;
+                case 1:
+                    holder.mItem = new DummyContent.DummyItem(String.valueOf(position + 1),"Checkboxes", "Details");
+                    //holder.mIdView.setText(holder.mItem.id);
+                    holder.mContentView.setText(holder.mItem.content);
+
+                    holder.mView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (mTwoPane) {
+                                Bundle arguments = new Bundle();
+                                arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                                CheckboxReferenceFragment fragment = new CheckboxReferenceFragment();
+                                fragment.setArguments(arguments);
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.item_detail_container, fragment)
+                                        .commit();
+                            } else {
+                                Context context = v.getContext();
+                                Intent intent = new Intent(context, CheckboxReferenceActivity.class);
                                 //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
 
                                 context.startActivity(intent);
