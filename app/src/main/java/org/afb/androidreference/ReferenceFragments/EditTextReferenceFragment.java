@@ -7,16 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import org.afb.androidreference.R;
 
 /**
- * Created by johnlilly on 2/22/17.
+ * Created by johnlilly on 3/22/17.
  */
 
-public class CheckboxReferenceFragment extends Fragment {
+public class EditTextReferenceFragment extends Fragment {
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -32,7 +32,7 @@ public class CheckboxReferenceFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public CheckboxReferenceFragment() {
+    public EditTextReferenceFragment() {
     }
 
     @Override
@@ -45,13 +45,12 @@ public class CheckboxReferenceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.checkbox_reference, container, false);
+        View rootView = inflater.inflate(R.layout.edittext_reference, container, false);
 
-        CheckBox checkBox = (CheckBox) rootView.findViewById(R.id.checkBox);
-        checkBox.setText("Checkbox label");
-        checkBox.setContentDescription("Checkbox description");
-        CollapsingToolbarLayout toolbarLayout = (CollapsingToolbarLayout) getActivity().findViewById(R.id.toolbar_layout);
-        toolbarLayout.setTitle("Checkboxes");
+        // set the labelFor attribute to the EditText
+        TextView textView = (TextView) rootView.findViewById(R.id.name_label);
+        textView.setLabelFor(R.id.name_editText);
+
         return rootView;
     }
 }

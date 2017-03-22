@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import org.afb.androidreference.ReferenceFragments.CheckboxReferenceActivity;
 import org.afb.androidreference.ReferenceFragments.CheckboxReferenceFragment;
+import org.afb.androidreference.ReferenceFragments.EditTextReferenceActivity;
+import org.afb.androidreference.ReferenceFragments.EditTextReferenceFragment;
 import org.afb.androidreference.ReferenceFragments.ImageReferenceActivity;
 import org.afb.androidreference.ReferenceFragments.ImageReferenceFragment;
 import org.afb.androidreference.dummy.DummyContent;
@@ -139,6 +141,32 @@ public class ItemListActivity extends AppCompatActivity {
                             } else {
                                 Context context = v.getContext();
                                 Intent intent = new Intent(context, CheckboxReferenceActivity.class);
+                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+
+                                context.startActivity(intent);
+                            }
+                        }
+                    });
+                    break;
+                case 2:
+                    holder.mItem = new DummyContent.DummyItem(String.valueOf(position + 1),"Edit Text", "Details");
+                    //holder.mIdView.setText(holder.mItem.id);
+                    holder.mContentView.setText(holder.mItem.content);
+
+                    holder.mView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (mTwoPane) {
+                                Bundle arguments = new Bundle();
+                                arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                                EditTextReferenceFragment fragment = new EditTextReferenceFragment();
+                                fragment.setArguments(arguments);
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.item_detail_container, fragment)
+                                        .commit();
+                            } else {
+                                Context context = v.getContext();
+                                Intent intent = new Intent(context, EditTextReferenceActivity.class);
                                 //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
 
                                 context.startActivity(intent);

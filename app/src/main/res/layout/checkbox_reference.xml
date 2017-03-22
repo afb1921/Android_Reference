@@ -8,5 +8,6 @@
         android:text="Checkbox Label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox" />
+        android:id="@+id/checkBox"
+        android:contentDescription="Checkbox description" />
 </LinearLayout>

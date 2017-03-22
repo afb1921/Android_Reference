@@ -45,6 +45,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.afb.androidreference.ReferenceFragments.CheckboxReferenceActivity" />
         </activity>
+        <activity
+            android:name=".ReferenceFragments.EditTextReferenceActivity"
+            android:label="Edit Text"
+            android:parentActivityName=".ItemListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.afb.androidreference.ReferenceFragments.EditTextReferenceActivity" />
+        </activity>
     </application>
 
 </manifest>
