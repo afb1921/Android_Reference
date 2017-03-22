@@ -47,7 +47,7 @@
         </activity>
         <activity
             android:name=".ReferenceFragments.EditTextReferenceActivity"
-            android:label="Edit Text"
+            android:label="Register"
             android:parentActivityName=".ItemListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

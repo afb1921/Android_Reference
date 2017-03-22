@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Android Reference</string>
     <string name="title_item_detail">Item Detail</string>
+    <array name="spinner_contents">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+    </array>
 </resources>

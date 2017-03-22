@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
 
     <TextView
-        android:id="@+id/name_label"
+        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Step 1: Enter your name"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <TextView
+        android:id="@+id/name_label"
+        android:layout_width="110dp"
         android:labelFor="@+id/name_editText"
-        android:text="Name:" />
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
 
     <EditText
         android:id="@+id/name_editText"
@@ -18,5 +28,32 @@
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Step 2: Select an item"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/reference_spinner"
+        android:text="Select an Item:"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <Spinner
+        android:id="@+id/reference_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit" />
 
 </LinearLayout>

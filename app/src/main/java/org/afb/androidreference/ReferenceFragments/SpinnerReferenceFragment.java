@@ -1,15 +1,10 @@
 package org.afb.androidreference.ReferenceFragments;
 
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.afb.androidreference.R;
@@ -18,7 +13,7 @@ import org.afb.androidreference.R;
  * Created by johnlilly on 3/22/17.
  */
 
-public class EditTextReferenceFragment extends Fragment {
+public class SpinnerReferenceFragment extends Fragment {
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -34,7 +29,7 @@ public class EditTextReferenceFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public EditTextReferenceFragment() {
+    public SpinnerReferenceFragment() {
     }
 
     @Override
@@ -52,10 +47,6 @@ public class EditTextReferenceFragment extends Fragment {
         // set the labelFor attribute to the EditText
         TextView textView = (TextView) rootView.findViewById(R.id.name_label);
         textView.setLabelFor(R.id.name_editText);
-
-        ArrayAdapter spinnerAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.spinner_contents, android.R.layout.simple_spinner_dropdown_item);
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.reference_spinner);
-        spinner.setAdapter(spinnerAdapter);
 
         return rootView;
     }
