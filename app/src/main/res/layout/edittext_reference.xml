@@ -10,7 +10,7 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Step 1: Enter your name"
+        android:text="Step 1: Enter your information"
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <TextView
@@ -29,13 +29,6 @@
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Step 2: Select an item"
-        android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <TextView
         android:id="@+id/textView3"
