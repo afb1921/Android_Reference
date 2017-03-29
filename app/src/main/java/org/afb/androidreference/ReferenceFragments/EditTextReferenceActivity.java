@@ -2,13 +2,16 @@ package org.afb.androidreference.ReferenceFragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import org.afb.androidreference.ItemListActivity;
 import org.afb.androidreference.R;
@@ -24,7 +27,34 @@ public class EditTextReferenceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setVisibility(View.GONE);
 
+// loop through all toolbar children right after setting support
+// action bar because the text view has no id assigned
+
+// also make sure that the activity has some title here
+// because calling setText() with an empty string actually
+// removes the text view from the toolbar
+
+        TextView toolbarTitle = null;
+        for (int i = 0; i < toolbar.getChildCount(); ++i) {
+            View child = toolbar.getChildAt(i);
+
+            // assuming that the title is the first instance of TextView
+            // you can also check if the title string matches
+            if (child instanceof TextView) {
+                toolbarTitle = (TextView)child;
+                break;
+            }
+        }
+        if(toolbarTitle != null) {
+            Log.d("ASD", toolbarTitle.getText().toString());
+            toolbarTitle.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
+            toolbarTitle.setFocusable(true);
+            toolbarTitle.setFocusableInTouchMode(true);
+            toolbarTitle.setAccessibilityTraversalBefore(R.id.name_label);
+        }
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override

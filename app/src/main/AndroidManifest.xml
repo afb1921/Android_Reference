@@ -54,6 +54,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.afb.androidreference.ReferenceFragments.EditTextReferenceActivity" />
         </activity>
+        <activity
+            android:name=".ReferenceFragments.FabReferenceActivity"
+            android:label="Floating Action Button"
+            android:parentActivityName=".ItemListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.afb.androidreference.ReferenceFragments.EditTextReferenceActivity" />
+        </activity>
     </application>
 
 </manifest>
