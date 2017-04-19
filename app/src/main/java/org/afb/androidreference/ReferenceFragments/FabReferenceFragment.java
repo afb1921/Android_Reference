@@ -5,6 +5,10 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.AccessibilityDelegateCompat;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,8 +73,28 @@ public class FabReferenceFragment extends Fragment {
 //            }
 //        });
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.spinner_contents, android.R.layout.simple_list_item_1);
-        ListView listView = (ListView) rootView.findViewById(R.id.fab_list);
+        final ListView listView = (ListView) rootView.findViewById(R.id.fab_list);
         listView.setAdapter(adapter);
+        FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
+        fab.setVisibility(View.VISIBLE);
+        NestedScrollView nestedScrollView = (NestedScrollView) getActivity().findViewById(R.id.item_detail_container);
+        nestedScrollView.setFillViewport(true);
+        AccessibilityNodeInfoCompat nodeInfoCompat = AccessibilityNodeInfoCompat.obtain(fab);
+
+        nodeInfoCompat.setTraversalBefore(listView);
+//        AccessibilityNodeInfoCompat.obtain(listView).setTraversalAfter(fab);
+        ViewCompat.setAccessibilityDelegate(fab, new AccessibilityDelegateCompat(){
+            @Override
+            public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
+                super.onInitializeAccessibilityNodeInfo(v, info);
+                info.setTraversalBefore(listView);
+                info.addAction(
+                        new AccessibilityNodeInfoCompat.AccessibilityActionCompat(
+                                AccessibilityNodeInfoCompat.ACTION_LONG_CLICK,
+                                "do something")
+                );
+            }
+        });
         return rootView;
     }
 }

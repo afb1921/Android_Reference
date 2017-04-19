@@ -116,13 +116,14 @@ public class ItemListActivity extends AppCompatActivity {
                                         .commit();
                             } else {
                                 Context context = v.getContext();
-                                Intent intent = new Intent(context, ImageReferenceActivity.class);
-                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+                                Intent intent = new Intent(context, ItemDetailActivity.class);
+                                intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.IMAGE_REFERENCE);
 
                                 context.startActivity(intent);
                             }
                         }
                     });
+
                     break;
                 case 1:
                     holder.mItem = new DummyContent.DummyItem(String.valueOf(position + 1),"Checkboxes", "Details");
@@ -142,8 +143,8 @@ public class ItemListActivity extends AppCompatActivity {
                                         .commit();
                             } else {
                                 Context context = v.getContext();
-                                Intent intent = new Intent(context, CheckboxReferenceActivity.class);
-                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+                                Intent intent = new Intent(context, ItemDetailActivity.class);
+                                intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.CHECKBOX_REFERENCE);
 
                                 context.startActivity(intent);
                             }
@@ -168,8 +169,8 @@ public class ItemListActivity extends AppCompatActivity {
                                         .commit();
                             } else {
                                 Context context = v.getContext();
-                                Intent intent = new Intent(context, EditTextReferenceActivity.class);
-                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+                                Intent intent = new Intent(context, ItemDetailActivity.class);
+                                intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.EDIT_TEXT_REFERENCE);
 
                                 context.startActivity(intent);
                             }
@@ -194,8 +195,8 @@ public class ItemListActivity extends AppCompatActivity {
                                         .commit();
                             } else {
                                 Context context = v.getContext();
-                                Intent intent = new Intent(context, FabReferenceActivity.class);
-                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+                                Intent intent = new Intent(context, ItemDetailActivity.class);
+                                intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.FAB_REFERENCE);
 
                                 context.startActivity(intent);
                             }

@@ -27,42 +27,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.afb.androidreference.ItemListActivity" />
         </activity>
-        <activity
-            android:name=".ReferenceFragments.ImageReferenceActivity"
-            android:label="Images"
-            android:parentActivityName=".ItemListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.afb.androidreference.ReferenceFragments.ImageReferenceActivity" />
-        </activity>
-        <activity
-            android:name=".ReferenceFragments.CheckboxReferenceActivity"
-            android:label="Checkboxes"
-            android:parentActivityName=".ItemListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.afb.androidreference.ReferenceFragments.CheckboxReferenceActivity" />
-        </activity>
-        <activity
-            android:name=".ReferenceFragments.EditTextReferenceActivity"
-            android:label="Register"
-            android:parentActivityName=".ItemListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.afb.androidreference.ReferenceFragments.EditTextReferenceActivity" />
-        </activity>
-        <activity
-            android:name=".ReferenceFragments.FabReferenceActivity"
-            android:label="Floating Action Button"
-            android:parentActivityName=".ItemListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.afb.androidreference.ReferenceFragments.EditTextReferenceActivity" />
-        </activity>
+
     </application>
 
 </manifest>
