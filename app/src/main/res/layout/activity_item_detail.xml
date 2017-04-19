@@ -50,7 +50,6 @@
         android:contentDescription="action"
 
         android:layout_gravity="end|bottom"
-        android:accessibilityTraversalBefore="@+id/item_detail_container"
         />
 
 </android.support.design.widget.CoordinatorLayout>

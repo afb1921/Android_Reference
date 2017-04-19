@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.design.widget.FloatingActionButton;
@@ -16,15 +15,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import org.afb.androidreference.ReferenceFragments.CheckboxReferenceActivity;
+import org.afb.androidreference.List.ListContent;
 import org.afb.androidreference.ReferenceFragments.CheckboxReferenceFragment;
-import org.afb.androidreference.ReferenceFragments.EditTextReferenceActivity;
 import org.afb.androidreference.ReferenceFragments.EditTextReferenceFragment;
-import org.afb.androidreference.ReferenceFragments.FabReferenceActivity;
 import org.afb.androidreference.ReferenceFragments.FabReferenceFragment;
-import org.afb.androidreference.ReferenceFragments.ImageReferenceActivity;
 import org.afb.androidreference.ReferenceFragments.ImageReferenceFragment;
-import org.afb.androidreference.dummy.DummyContent;
 
 import java.util.List;
 
@@ -76,15 +71,15 @@ public class ItemListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(DummyContent.ITEMS));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(ListContent.ITEMS));
     }
 
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<DummyContent.DummyItem> mValues;
+        private final List<ListContent.ListItem> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<DummyContent.DummyItem> items) {
+        public SimpleItemRecyclerViewAdapter(List<ListContent.ListItem> items) {
             mValues = items;
         }
 
@@ -99,7 +94,7 @@ public class ItemListActivity extends AppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, int position) {
             switch (position){
                 case 0:
-                    holder.mItem = new DummyContent.DummyItem(String.valueOf(position + 1),"Images", "Details");
+                    holder.mItem = new ListContent.ListItem(String.valueOf(position + 1),"Images", "Details");
                     //holder.mIdView.setText(holder.mItem.id);
                     holder.mContentView.setText(holder.mItem.content);
 
@@ -116,16 +111,17 @@ public class ItemListActivity extends AppCompatActivity {
                                         .commit();
                             } else {
                                 Context context = v.getContext();
-                                Intent intent = new Intent(context, ImageReferenceActivity.class);
-                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+                                Intent intent = new Intent(context, ItemDetailActivity.class);
+                                intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.IMAGE_REFERENCE);
 
                                 context.startActivity(intent);
                             }
                         }
                     });
+
                     break;
                 case 1:
-                    holder.mItem = new DummyContent.DummyItem(String.valueOf(position + 1),"Checkboxes", "Details");
+                    holder.mItem = new ListContent.ListItem(String.valueOf(position + 1),"Checkboxes", "Details");
                     //holder.mIdView.setText(holder.mItem.id);
                     holder.mContentView.setText(holder.mItem.content);
 
@@ -142,8 +138,8 @@ public class ItemListActivity extends AppCompatActivity {
                                         .commit();
                             } else {
                                 Context context = v.getContext();
-                                Intent intent = new Intent(context, CheckboxReferenceActivity.class);
-                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+                                Intent intent = new Intent(context, ItemDetailActivity.class);
+                                intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.CHECKBOX_REFERENCE);
 
                                 context.startActivity(intent);
                             }
@@ -151,7 +147,7 @@ public class ItemListActivity extends AppCompatActivity {
                     });
                     break;
                 case 2:
-                    holder.mItem = new DummyContent.DummyItem(String.valueOf(position + 1),"Edit Text", "Details");
+                    holder.mItem = new ListContent.ListItem(String.valueOf(position + 1),"Edit Text", "Details");
                     //holder.mIdView.setText(holder.mItem.id);
                     holder.mContentView.setText(holder.mItem.content);
 
@@ -168,8 +164,8 @@ public class ItemListActivity extends AppCompatActivity {
                                         .commit();
                             } else {
                                 Context context = v.getContext();
-                                Intent intent = new Intent(context, EditTextReferenceActivity.class);
-                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+                                Intent intent = new Intent(context, ItemDetailActivity.class);
+                                intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.EDIT_TEXT_REFERENCE);
 
                                 context.startActivity(intent);
                             }
@@ -177,7 +173,7 @@ public class ItemListActivity extends AppCompatActivity {
                     });
                     break;
                 case 3:
-                    holder.mItem = new DummyContent.DummyItem(String.valueOf(position + 1),"FAB", "Details");
+                    holder.mItem = new ListContent.ListItem(String.valueOf(position + 1),"FAB", "Details");
                     //holder.mIdView.setText(holder.mItem.id);
                     holder.mContentView.setText(holder.mItem.content);
 
@@ -194,8 +190,8 @@ public class ItemListActivity extends AppCompatActivity {
                                         .commit();
                             } else {
                                 Context context = v.getContext();
-                                Intent intent = new Intent(context, FabReferenceActivity.class);
-                                //intent.putExtra(ImageReferenceFragment.ARG_ITEM_ID, holder.mItem.id);
+                                Intent intent = new Intent(context, ItemDetailActivity.class);
+                                intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.FAB_REFERENCE);
 
                                 context.startActivity(intent);
                             }
@@ -237,7 +233,7 @@ public class ItemListActivity extends AppCompatActivity {
         public class ViewHolder extends RecyclerView.ViewHolder {
             public final View mView;
             public final TextView mContentView;
-            public DummyContent.DummyItem mItem;
+            public ListContent.ListItem mItem;
 
             public ViewHolder(View view) {
                 super(view);
