@@ -23,7 +23,7 @@ public class SpinnerReferenceFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-//    private DummyContent.DummyItem mItem;
+//    private ListContent.DummyItem mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
