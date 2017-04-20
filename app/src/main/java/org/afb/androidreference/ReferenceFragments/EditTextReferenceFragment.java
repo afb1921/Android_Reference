@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityEvent;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -51,7 +52,8 @@ public class EditTextReferenceFragment extends Fragment {
 
         // set the labelFor attribute to the EditText
         TextView textView = (TextView) rootView.findViewById(R.id.name_label);
-        textView.setLabelFor(R.id.name_editText);
+        //textView.setLabelFor(R.id.name_editText);
+
 
         ArrayAdapter spinnerAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.spinner_contents, android.R.layout.simple_spinner_dropdown_item);
         Spinner spinner = (Spinner) rootView.findViewById(R.id.reference_spinner);

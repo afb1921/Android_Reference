@@ -19,6 +19,7 @@ import org.afb.androidreference.List.ListContent;
 import org.afb.androidreference.ReferenceFragments.CheckboxReferenceFragment;
 import org.afb.androidreference.ReferenceFragments.EditTextReferenceFragment;
 import org.afb.androidreference.ReferenceFragments.FabReferenceFragment;
+import org.afb.androidreference.ReferenceFragments.FocusOrderReferenceFragment;
 import org.afb.androidreference.ReferenceFragments.ImageReferenceFragment;
 
 import java.util.List;
@@ -192,6 +193,32 @@ public class ItemListActivity extends AppCompatActivity {
                                 Context context = v.getContext();
                                 Intent intent = new Intent(context, ItemDetailActivity.class);
                                 intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.FAB_REFERENCE);
+
+                                context.startActivity(intent);
+                            }
+                        }
+                    });
+                    break;
+                case 4:
+                    holder.mItem = new ListContent.ListItem(String.valueOf(position + 1),"Focus Order", "Details");
+                    //holder.mIdView.setText(holder.mItem.id);
+                    holder.mContentView.setText(holder.mItem.content);
+
+                    holder.mView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (mTwoPane) {
+                                Bundle arguments = new Bundle();
+                                arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                                FocusOrderReferenceFragment fragment = new FocusOrderReferenceFragment();
+                                fragment.setArguments(arguments);
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.item_detail_container, fragment)
+                                        .commit();
+                            } else {
+                                Context context = v.getContext();
+                                Intent intent = new Intent(context, ItemDetailActivity.class);
+                                intent.putExtra(ItemDetailActivity.fragment_args, ItemDetailActivity.FOCUS_ORDER_REFERENCE);
 
                                 context.startActivity(intent);
                             }

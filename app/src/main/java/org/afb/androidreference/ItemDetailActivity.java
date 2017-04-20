@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import org.afb.androidreference.ReferenceFragments.CheckboxReferenceFragment;
 import org.afb.androidreference.ReferenceFragments.EditTextReferenceFragment;
 import org.afb.androidreference.ReferenceFragments.FabReferenceFragment;
+import org.afb.androidreference.ReferenceFragments.FocusOrderReferenceFragment;
 import org.afb.androidreference.ReferenceFragments.ImageReferenceFragment;
 import org.afb.androidreference.ReferenceFragments.SpinnerReferenceFragment;
 
@@ -29,6 +30,7 @@ public class ItemDetailActivity extends AppCompatActivity {
     protected static final int EDIT_TEXT_REFERENCE = 2;
     protected static final int FAB_REFERENCE = 3;
     protected static final int SPINNER_REFERENCE = 4;
+    protected static final int FOCUS_ORDER_REFERENCE = 5;
 
     protected static String fragment_args = "fragment";
 
@@ -98,6 +100,13 @@ public class ItemDetailActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.item_detail_container, fragment)
                             .commit();
+                    break;
+                case FOCUS_ORDER_REFERENCE:
+                    fragment = new FocusOrderReferenceFragment();
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.item_detail_container, fragment)
+                            .commit();
+                    getSupportActionBar().setTitle("Focus Order");
                     break;
             }
 //            Bundle arguments = new Bundle();

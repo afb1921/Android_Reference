@@ -8,4 +8,4 @@
     android:textIsSelectable="true"
     tools:context=".ItemListActivity"
     android:src="@drawable/afblogo"
-    android:contentDescription="American Foundation for the Blind - Expanding possibilities for people with vision loss" />
+    android:contentDescription="@string/photo1_content_description" />

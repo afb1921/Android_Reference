@@ -26,7 +26,7 @@ public class ListContent {
     /**
      * Number of items to display
      */
-    private static final int COUNT = 4;
+    private static final int COUNT = 5;
 
     static {
         // Add some sample items.
