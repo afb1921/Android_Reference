@@ -11,10 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/left_column"
-        android:focusable="false"
-        android:isScrollContainer="false"
-        android:focusableInTouchMode="true">
+        android:id="@+id/left_column">
 
         <TextView
             android:text="Name:"
@@ -22,16 +19,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/name_label"
             android:textStyle="normal|bold"
-            android:textColor="@android:color/black"
-            android:focusableInTouchMode="false" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:text="Bob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/name_value"
-            android:textColor="@android:color/black"
-            android:focusableInTouchMode="false" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:text="Location:"
@@ -39,16 +34,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/location_label"
             android:textStyle="normal|bold"
-            android:textColor="@android:color/black"
-            android:focusableInTouchMode="false" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:text="Washington, DC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/location_value"
-            android:textColor="@android:color/black"
-            android:focusableInTouchMode="false" />
+            android:textColor="@android:color/black" />
     </LinearLayout>
 
     <LinearLayout
@@ -56,10 +49,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/right_column"
-        android:focusable="false"
-        android:isScrollContainer="false"
-        android:nestedScrollingEnabled="false">
+        android:id="@+id/right_column">
 
         <TextView
             android:text="Phone:"
@@ -67,16 +57,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/phone_label"
             android:textStyle="normal|bold"
-            android:textColor="@android:color/black"
-            android:focusableInTouchMode="false" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:text="123-867-5309"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/phone_value"
-            android:textColor="@android:color/black"
-            android:focusableInTouchMode="false" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:text="Email:"
@@ -84,15 +72,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/email_label"
             android:textStyle="normal|bold"
-            android:textColor="@android:color/black"
-            android:focusableInTouchMode="false" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:text="bob@example.com"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/email_value"
-            android:textColor="@android:color/black"
-            android:focusableInTouchMode="false" />
+            android:textColor="@android:color/black" />
     </LinearLayout>
 </LinearLayout>

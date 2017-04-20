@@ -44,22 +44,45 @@ public class FocusOrderReferenceFragment extends Fragment {
         FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
         fab.setVisibility(View.VISIBLE);
         fab.setImageResource(android.R.drawable.ic_menu_edit);
-        final View itemDetailContainer = getActivity().findViewById(R.id.item_detail_container);
-        ViewCompat.setAccessibilityDelegate(fab, new AccessibilityDelegateCompat(){
-            @Override
-            public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
-                super.onInitializeAccessibilityNodeInfo(v, info);
-                info.setTraversalBefore(itemDetailContainer);
-            }
-        });
-        View leftColumn = getActivity().findViewById(R.id.left_column);
-        final View rightColumn = getActivity().findViewById(R.id.right_column);
-        ViewCompat.setAccessibilityDelegate(leftColumn, new AccessibilityDelegateCompat(){
-            @Override
-            public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
-                super.onInitializeAccessibilityNodeInfo(v, info);
-                info.setTraversalAfter(rightColumn);
-            }
-        });
+        View phoneLabel = getActivity().findViewById(R.id.phone_label);
+        View phoneValue = getActivity().findViewById(R.id.phone_value);
+        View emailLabel = getActivity().findViewById(R.id.email_label);
+        View emailValue = getActivity().findViewById(R.id.email_value);
+        View nameLabel = getActivity().findViewById(R.id.name_label);
+        View nameValue = getActivity().findViewById(R.id.name_value);
+        View locationLabel = getActivity().findViewById(R.id.location_label);
+        View locationValue = getActivity().findViewById(R.id.location_value);
+
+        fab.setAccessibilityTraversalBefore(R.id.item_detail_container);
+        phoneLabel.setAccessibilityTraversalAfter(fab.getId());
+        //phoneLabel.setAccessibilityTraversalBefore(phoneValue.getId());
+        phoneValue.setAccessibilityTraversalAfter(phoneLabel.getId());
+        //phoneValue.setAccessibilityTraversalBefore(emailLabel.getId());
+        emailLabel.setAccessibilityTraversalAfter(phoneValue.getId());
+        //emailLabel.setAccessibilityTraversalBefore(emailValue.getId());
+        emailValue.setAccessibilityTraversalAfter(emailLabel.getId());
+        //emailValue.setAccessibilityTraversalBefore(nameLabel.getId());
+        nameLabel.setAccessibilityTraversalAfter(emailValue.getId());
+        //nameLabel.setAccessibilityTraversalBefore(nameValue.getId());
+        nameValue.setAccessibilityTraversalAfter(nameLabel.getId());
+        //nameValue.setAccessibilityTraversalBefore(locationLabel.getId());
+        locationLabel.setAccessibilityTraversalAfter(nameValue.getId());
+        //locationLabel.setAccessibilityTraversalBefore(locationValue.getId());
+        locationValue.setAccessibilityTraversalAfter(locationLabel.getId());
+//        ViewCompat.setAccessibilityDelegate(fab, new AccessibilityDelegateCompat(){
+//            @Override
+//            public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
+//                super.onInitializeAccessibilityNodeInfo(v, info);
+//                info.setTraversalBefore(itemDetailContainer);
+//            }
+//        });
+//        final View rightColumn = getActivity().findViewById(R.id.right_column);
+//        ViewCompat.setAccessibilityDelegate(leftColumn, new AccessibilityDelegateCompat(){
+//            @Override
+//            public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
+//                super.onInitializeAccessibilityNodeInfo(v, info);
+//                info.setTraversalAfter(rightColumn);
+//            }
+//        });
     }
 }
