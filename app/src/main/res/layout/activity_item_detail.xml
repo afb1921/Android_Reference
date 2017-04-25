@@ -48,7 +48,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/stat_notify_sync"
         android:contentDescription="action"
-
+        android:accessibilityTraversalBefore="@id/item_detail_container"
         android:layout_gravity="end|bottom"
         />
 
