@@ -21,24 +21,21 @@ package org.afb.androidreference;
  */
 public interface NavigationCallback {
 
-    /**
-     * Callback when a certain test session is selected.
-     * @param sessionId ID of the selected test session.
-     */
-    void onTestSessionSelected(int sessionId);
 
-    /**
-     * Callback to navigate to the next test content.
-     * @param sessionId ID of current test session.
-     * @param contentIndex Index of current test content page.
-     */
-    void onNextContentClicked(int sessionId, int contentIndex);
+    void onTestSessionSelected(int position);
 
-    /**
-     * Callback to navigate to the previous test content.
-     * @param sessionId ID of current test session.
-     * @param contentIndex Index of current test content page.
-     */
-    void onPreviousContentClicked(int sessionId, int contentIndex);
+//    /**
+//     * Callback to navigate to the next test content.
+//     * @param sessionId ID of current test session.
+//     * @param contentIndex Index of current test content page.
+//     */
+//    void onNextContentClicked(int sessionId, int contentIndex);
+//
+//    /**
+//     * Callback to navigate to the previous test content.
+//     * @param sessionId ID of current test session.
+//     * @param contentIndex Index of current test content page.
+//     */
+//    void onPreviousContentClicked(int sessionId, int contentIndex);
 
 }

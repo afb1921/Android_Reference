@@ -14,7 +14,7 @@ public class ItemController {
         referenceItems.add(new ReferenceItem("name","class","desc"));
         referenceItems.add(new ReferenceItem("name1","class1","desc1"));
         referenceItems.add(new ReferenceItem("name2","class2","desc2"));
-        referenceItems.add(new ReferenceItem("name2","class2","desc2"));
+        referenceItems.add(new ReferenceItem("name3","class3","desc3"));
     }
 
     public int getCount(){

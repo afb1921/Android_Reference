@@ -14,7 +14,7 @@ import android.view.accessibility.AccessibilityEvent;
  */
 
 public class MainActivity extends AppCompatActivity implements
-        FragmentManager.OnBackStackChangedListener {
+        FragmentManager.OnBackStackChangedListener, MainFragment.Callbacks {
 
     private static final String MAIN_FRAGMENT_NAME = "MAIN_FRAGMENT_NAME";
     private ItemController mController;
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
-//    @Override
-//    public void onTestSessionSelected(int sessionId) {
-//        showTestContent(sessionId, 0);
-//    }
+    @Override
+    public void onItemSelected(int position) {
+        showReferenceContent(mController.getItem(position));
+    }
 
 //    @Override
 //    public void onNextContentClicked(int sessionId, int contentIndex) {
@@ -106,19 +106,20 @@ public class MainActivity extends AppCompatActivity implements
         getSupportFragmentManager().popBackStack(MAIN_FRAGMENT_NAME, 0);
     }
 
-//    /**
-//     * Show specified content in a test session.
-//     *
-//     * @param sessionId    session ID
-//     * @param contentIndex page index of the content in the session
-//     */
-//    private void showTestContent(int sessionId, int contentIndex) {
+    /**
+     * Show specified content in a test session.
+     *
+     * @param sessionId    session ID
+     * @param contentIndex page index of the content in the session
+     */
+    private void showReferenceContent(ReferenceItem ref) {
+
 //        final TestSessionFragment testSessionFragment = new TestSessionFragment();
 //        testSessionFragment.setSession(sessionId, contentIndex);
 //        testSessionFragment.setNavigationCallback(this);
 //        switchFragment(testSessionFragment, null);
 //        mController.recordTestSessionAccessed(getApplicationContext(), sessionId);
-//    }
+    }
 
     /**
      * Replaces the fragment holder with a new fragment, adds the fragment transaction to the
