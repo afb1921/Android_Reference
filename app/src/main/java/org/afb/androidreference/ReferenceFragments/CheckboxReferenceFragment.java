@@ -50,8 +50,8 @@ public class CheckboxReferenceFragment extends Fragment {
         CheckBox checkBox = (CheckBox) rootView.findViewById(R.id.checkBox);
         checkBox.setText("Checkbox label");
         checkBox.setContentDescription("Checkbox description");
-        CollapsingToolbarLayout toolbarLayout = (CollapsingToolbarLayout) getActivity().findViewById(R.id.toolbar_layout);
-        toolbarLayout.setTitle("Checkboxes");
+        //CollapsingToolbarLayout toolbarLayout = (CollapsingToolbarLayout) getActivity().findViewById(R.id.toolbar_layout);
+        //toolbarLayout.setTitle("Checkboxes");
         return rootView;
     }
 }

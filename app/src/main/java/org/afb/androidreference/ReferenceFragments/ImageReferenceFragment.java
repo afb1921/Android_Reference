@@ -62,8 +62,8 @@ public class ImageReferenceFragment extends Fragment {
 
         ImageView imageView = (ImageView) rootView.findViewById(R.id.image_reference);
         imageView.setContentDescription(getString(R.string.photo1_content_description));
-        CollapsingToolbarLayout toolbarLayout = (CollapsingToolbarLayout) getActivity().findViewById(R.id.toolbar_layout);
-        toolbarLayout.setTitle("Images");
+        //CollapsingToolbarLayout toolbarLayout = (CollapsingToolbarLayout) getActivity().findViewById(R.id.toolbar_layout);
+       // toolbarLayout.setTitle("Images");
         return rootView;
     }
 }
