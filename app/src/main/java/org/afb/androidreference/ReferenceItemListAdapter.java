@@ -15,13 +15,12 @@ public class ReferenceItemListAdapter extends BaseAdapter {
 
     private final Context mContext;
     private final ItemController mController;
-    private final NavigationCallback mCallback;
 
     public ReferenceItemListAdapter(Context context, ItemController controller,
                               NavigationCallback callback) {
         mContext = context;
         mController = controller;
-        mCallback = callback;
+        NavigationCallback mCallback = callback;
     }
 
     @Override

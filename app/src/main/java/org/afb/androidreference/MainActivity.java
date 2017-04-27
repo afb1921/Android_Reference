@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements
         FragmentManager.OnBackStackChangedListener, MainFragment.Callbacks {
 
     private static final String MAIN_FRAGMENT_NAME = "MAIN_FRAGMENT_NAME";
-    private ItemController mController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ItemController mController;
         try {
             mController = ItemController.getInstance();
         } catch (Exception e) {

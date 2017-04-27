@@ -53,7 +53,7 @@ public class MainFragment extends Fragment implements AdapterView.OnItemClickLis
         /**
          * Callback for when an item has been selected.
          */
-        public void onItemSelected(int position);
+        void onItemSelected(int position);
     }
 
     /**
@@ -76,7 +76,6 @@ public class MainFragment extends Fragment implements AdapterView.OnItemClickLis
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-        Toast.makeText(getActivity(), "Item: " + mController.getItem(position).getName(), Toast.LENGTH_SHORT).show();
         mCallbacks.onItemSelected(position);
 
     }
