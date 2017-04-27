@@ -53,7 +53,8 @@ public class FocusOrderReferenceFragment extends Fragment {
         View locationLabel = getActivity().findViewById(R.id.location_label);
         View locationValue = getActivity().findViewById(R.id.location_value);
 
-        fab.setAccessibilityTraversalBefore(R.id.item_detail_container);
+        //TODO: Commented this out cause it broke in refactoring
+        //fab.setAccessibilityTraversalBefore(R.id.item_detail_container);
         phoneLabel.setAccessibilityTraversalAfter(fab.getId());
         //phoneLabel.setAccessibilityTraversalBefore(phoneValue.getId());
         phoneValue.setAccessibilityTraversalAfter(phoneLabel.getId());

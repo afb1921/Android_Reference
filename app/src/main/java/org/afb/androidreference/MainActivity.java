@@ -9,15 +9,17 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 
+import org.afb.androidreference.ReferenceClasses.ReferenceItemFragment;
+
 /**
  * Created by wbreu on 4/25/2017.
  */
 
 public class MainActivity extends AppCompatActivity implements
-        FragmentManager.OnBackStackChangedListener {
+        FragmentManager.OnBackStackChangedListener, MainFragment.Callbacks {
 
     private static final String MAIN_FRAGMENT_NAME = "MAIN_FRAGMENT_NAME";
-    private ItemController mController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +28,9 @@ public class MainActivity extends AppCompatActivity implements
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ItemController mController;
         try {
-            mController = new ItemController();
+            mController = ItemController.getInstance();
         } catch (Exception e) {
             Log.println(Log.ERROR, this.getLocalClassName(), "Failed to initialize tests.");
             finish();
@@ -49,10 +52,10 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
-//    @Override
-//    public void onTestSessionSelected(int sessionId) {
-//        showTestContent(sessionId, 0);
-//    }
+    @Override
+    public void onItemSelected(int position) {
+        showReferenceContent(position);
+    }
 
 //    @Override
 //    public void onNextContentClicked(int sessionId, int contentIndex) {
@@ -106,19 +109,19 @@ public class MainActivity extends AppCompatActivity implements
         getSupportFragmentManager().popBackStack(MAIN_FRAGMENT_NAME, 0);
     }
 
-//    /**
-//     * Show specified content in a test session.
-//     *
-//     * @param sessionId    session ID
-//     * @param contentIndex page index of the content in the session
-//     */
-//    private void showTestContent(int sessionId, int contentIndex) {
-//        final TestSessionFragment testSessionFragment = new TestSessionFragment();
-//        testSessionFragment.setSession(sessionId, contentIndex);
-//        testSessionFragment.setNavigationCallback(this);
-//        switchFragment(testSessionFragment, null);
-//        mController.recordTestSessionAccessed(getApplicationContext(), sessionId);
-//    }
+    /**
+     * Show specified content in a test session.
+     *
+     * @param i    Reference int
+     */
+    private void showReferenceContent(int i) {
+
+        final ReferenceItemFragment testSessionFragment = new ReferenceItemFragment();
+        testSessionFragment.setSession(i, i);
+        //testSessionFragment.setNavigationCallback(this);
+        switchFragment(testSessionFragment, null);
+        //mController.recordTestSessionAccessed(getApplicationContext(), sessionId);
+    }
 
     /**
      * Replaces the fragment holder with a new fragment, adds the fragment transaction to the
