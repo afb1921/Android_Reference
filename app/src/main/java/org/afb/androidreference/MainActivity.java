@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 
+import org.afb.androidreference.ReferenceClasses.ReferenceItemFragment;
+
 /**
  * Created by wbreu on 4/25/2017.
  */
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements
         setSupportActionBar(toolbar);
 
         try {
-            mController = new ItemController();
+            mController = ItemController.getInstance();
         } catch (Exception e) {
             Log.println(Log.ERROR, this.getLocalClassName(), "Failed to initialize tests.");
             finish();
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onItemSelected(int position) {
-        showReferenceContent(mController.getItem(position));
+        showReferenceContent(position);
     }
 
 //    @Override
@@ -109,16 +111,15 @@ public class MainActivity extends AppCompatActivity implements
     /**
      * Show specified content in a test session.
      *
-     * @param sessionId    session ID
-     * @param contentIndex page index of the content in the session
+     * @param i    Reference int
      */
-    private void showReferenceContent(ReferenceItem ref) {
+    private void showReferenceContent(int i) {
 
-//        final TestSessionFragment testSessionFragment = new TestSessionFragment();
-//        testSessionFragment.setSession(sessionId, contentIndex);
-//        testSessionFragment.setNavigationCallback(this);
-//        switchFragment(testSessionFragment, null);
-//        mController.recordTestSessionAccessed(getApplicationContext(), sessionId);
+        final ReferenceItemFragment testSessionFragment = new ReferenceItemFragment();
+        testSessionFragment.setSession(i, i);
+        //testSessionFragment.setNavigationCallback(this);
+        switchFragment(testSessionFragment, null);
+        //mController.recordTestSessionAccessed(getApplicationContext(), sessionId);
     }
 
     /**

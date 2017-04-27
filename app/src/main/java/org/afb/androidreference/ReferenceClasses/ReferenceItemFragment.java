@@ -1,4 +1,4 @@
-package org.afb.androidreference;
+package org.afb.androidreference.ReferenceClasses;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import org.afb.androidreference.ItemController;
+import org.afb.androidreference.R;
+import org.afb.androidreference.ReferenceClasses.BaseReferenceItemContent;
 
 /**
  * Created by wbreu on 4/26/2017.
@@ -36,7 +40,7 @@ public class ReferenceItemFragment extends Fragment {
     public void onResume() {
         super.onResume();
         final AppCompatActivity activity = (AppCompatActivity) getActivity();
-        final String title = TestController.getInstance().getSessionById(mSessionId).getTitle();
+        final String title = ItemController.getInstance().getItem(mSessionId).getName();
         if (activity != null) {
             final ActionBar toolbar = activity.getSupportActionBar();
             if (toolbar != null) {
@@ -53,8 +57,8 @@ public class ReferenceItemFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedState) {
         final View view = inflater.inflate(R.layout.fragment_test_content, container, false);
 
-        final BaseTestContent content = TestController.getInstance().getSessionById(mSessionId)
-                .getTestContent(mContentIndex);
+        final BaseReferenceItemContent content = ItemController.getInstance().getItem(mSessionId)
+                .getTestContent(mContentIndex, getContext());
 
         final TextView description = (TextView)
                 (view.findViewById(R.id.contentContainer).findViewById(R.id.description));
@@ -65,13 +69,13 @@ public class ReferenceItemFragment extends Fragment {
                 (view.findViewById(R.id.contentContainer).findViewById(R.id.title));
         subtitle.setText(content.getSubtitle());
 
-        final Button previous = (Button) view.findViewById(R.id.previous);
-        previous.setOnClickListener(this);
+//        final Button previous = (Button) view.findViewById(R.id.previous);
+//        previous.setOnClickListener(this);
+//
+//        final Button next = (Button) view.findViewById(R.id.next);
+//        next.setOnClickListener(this);
 
-        final Button next = (Button) view.findViewById(R.id.next);
-        next.setOnClickListener(this);
-
-        assignButtonText(previous, next);
+//        assignButtonText(previous, next);
 
         final ViewGroup contentArea = (ViewGroup) view.findViewById(R.id.content_area);
         contentArea.addView(content.getView(inflater, contentArea, getContext()));
@@ -79,39 +83,39 @@ public class ReferenceItemFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onClick(View v) {
-        if (mCallback == null) {
-            return;
-        }
-        switch (v.getId()) {
-            case R.id.next:
-                mCallback.onNextContentClicked(mSessionId, mContentIndex);
-                break;
-            case R.id.previous:
-                mCallback.onPreviousContentClicked(mSessionId, mContentIndex);
-                break;
-        }
-    }
+//    @Override
+//    public void onClick(View v) {
+//        if (mCallback == null) {
+//            return;
+//        }
+//        switch (v.getId()) {
+//            case R.id.next:
+//                mCallback.onNextContentClicked(mSessionId, mContentIndex);
+//                break;
+//            case R.id.previous:
+//                mCallback.onPreviousContentClicked(mSessionId, mContentIndex);
+//                break;
+//        }
+//    }
 
-    private void assignButtonText(Button previousButton, Button nextButton) {
-        final TestController controller = TestController.getInstance();
-
-        if (mContentIndex > 0) {
-            previousButton.setText(R.string.button_previous_page);
-        } else if (controller.getPreviousSessionById(mSessionId) != null) {
-            previousButton.setText(R.string.button_previous_category);
-        } else {
-            previousButton.setText(R.string.button_home);
-        }
-
-        final TestSession session = controller.getSessionById(mSessionId);
-        if (mContentIndex < session.getContentCount() - 1) {
-            nextButton.setText(R.string.button_next_page);
-        } else if (controller.getNextSessionById(mSessionId) != null) {
-            nextButton.setText(R.string.button_next_category);
-        } else {
-            nextButton.setText(R.string.button_home);
-        }
-    }
+//    private void assignButtonText(Button previousButton, Button nextButton) {
+//        final TestController controller = TestController.getInstance();
+//
+//        if (mContentIndex > 0) {
+//            previousButton.setText(R.string.button_previous_page);
+//        } else if (controller.getPreviousSessionById(mSessionId) != null) {
+//            previousButton.setText(R.string.button_previous_category);
+//        } else {
+//            previousButton.setText(R.string.button_home);
+//        }
+//
+//        final TestSession session = controller.getSessionById(mSessionId);
+//        if (mContentIndex < session.getContentCount() - 1) {
+//            nextButton.setText(R.string.button_next_page);
+//        } else if (controller.getNextSessionById(mSessionId) != null) {
+//            nextButton.setText(R.string.button_next_category);
+//        } else {
+//            nextButton.setText(R.string.button_home);
+//        }
+//    }
 }
