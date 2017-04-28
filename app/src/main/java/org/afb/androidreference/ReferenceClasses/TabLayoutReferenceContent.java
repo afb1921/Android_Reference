@@ -7,9 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityEvent;
-import android.widget.TextView;
-
 import org.afb.androidreference.R;
 import org.afb.androidreference.ReferenceClasses.TabLayoutResources.SampleFragmentPagerAdapter;
 
@@ -33,7 +30,6 @@ public class TabLayoutReferenceContent extends BaseReferenceItemContent {
             TabLayout.Tab tab = tabLayout.getTabAt(i);
             tab.setContentDescription(tab.getText() + " " + (i+1) + " of " + tabLayout.getTabCount());
         }
-
         return rootView;
     }
 
