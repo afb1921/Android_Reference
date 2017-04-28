@@ -16,6 +16,7 @@ public class ItemController {
         referenceItems.add(new ReferenceItem("Floating Action Button",org.afb.androidreference.ReferenceClasses.FabReferenceContent.class,"Floating action button"));
         referenceItems.add(new ReferenceItem("Edit Text",org.afb.androidreference.ReferenceClasses.EditTextReferenceContent.class,"Edit Text"));
         referenceItems.add(new ReferenceItem("Spinner",org.afb.androidreference.ReferenceClasses.SpinnerReferenceContent.class,"Spinner"));
+        referenceItems.add(new ReferenceItem("Tab Layout",org.afb.androidreference.ReferenceClasses.TabLayoutReferenceContent.class,"Tab Layout"));
     }
 
     public int getCount(){

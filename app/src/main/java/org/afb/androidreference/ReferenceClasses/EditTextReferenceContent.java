@@ -30,7 +30,7 @@ public class EditTextReferenceContent extends BaseReferenceItemContent {
 
         // set the labelFor attribute to the EditText
         TextView textView = (TextView) rootView.findViewById(R.id.name_label);
-        //textView.setLabelFor(R.id.name_editText);
+        textView.setLabelFor(R.id.name_editText);
 
 
         ArrayAdapter spinnerAdapter = ArrayAdapter.createFromResource(context, R.array.spinner_contents, android.R.layout.simple_spinner_dropdown_item);
