@@ -14,16 +14,16 @@
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <TextView
-        android:id="@+id/name_label"
+        android:id="@+id/street_address_label"
         android:layout_width="110dp"
-        android:labelFor="@+id/name_editText"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/street_address_editText"
         android:text="Name:"
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
 
     <EditText
-        android:id="@+id/name_editText"
+        android:id="@+id/street_address_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -41,8 +41,7 @@
     <Spinner
         android:id="@+id/reference_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dialog" />
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/button"

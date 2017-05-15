@@ -15,4 +15,13 @@
         <item>Item 12</item>
     </array>
     <string name="photo1_content_description">Steph Curry Fires a game-winning shot to beat the buzzer</string>
+    <string name="add_city_label">Add City</string>
+    <array name="spinner_continents">
+        <item>Africa</item>
+        <item>Asia</item>
+        <item>Australia</item>
+        <item>Europe</item>
+        <item>North America</item>
+        <item>South America</item>
+    </array>
 </resources>

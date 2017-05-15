@@ -9,10 +9,13 @@ import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import org.afb.androidreference.R;
+
+import static android.view.accessibility.AccessibilityNodeInfo.ACTION_LONG_CLICK;
 
 /**
  * Created by wbreu on 4/27/2017.
@@ -32,11 +35,19 @@ public class FabReferenceContent extends BaseReferenceItemContent {
         listView.setAdapter(adapter);
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         fab.setVisibility(View.VISIBLE);
+        fab.setContentDescription(getString(R.string.add_city_label));
         //NestedScrollView nestedScrollView = (NestedScrollView) rootView.findViewById(R.id.item_detail_container);
         //nestedScrollView.setFillViewport(true);
         AccessibilityNodeInfoCompat nodeInfoCompat = AccessibilityNodeInfoCompat.obtain(fab);
 
         nodeInfoCompat.setTraversalBefore(listView);
+        fab.setAccessibilityDelegate(new View.AccessibilityDelegate() {
+            @Override
+            public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfo info) {
+                super.onInitializeAccessibilityNodeInfo(host, info);
+                info.addAction(new AccessibilityNodeInfo.AccessibilityAction(ACTION_LONG_CLICK, "edit address"));
+            }
+        });
 
         ViewCompat.setAccessibilityDelegate(fab, new AccessibilityDelegateCompat(){
             @Override

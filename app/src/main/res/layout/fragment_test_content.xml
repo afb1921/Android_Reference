@@ -49,7 +49,8 @@
                 android:focusableInTouchMode="true"
                 android:paddingBottom="6dp"
                 android:paddingTop="6dp"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/description"
@@ -57,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:paddingTop="2dp" />
+                android:paddingTop="2dp"
+                android:visibility="gone" />
 
         </LinearLayout>
 
