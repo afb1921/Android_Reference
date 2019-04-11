@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements
         //mainFragment.setOnSessionSelectedCallback(this);
         mainFragment.setTestController(mController);
         switchFragment(mainFragment, MAIN_FRAGMENT_NAME);
+
     }
 
     @Override
@@ -121,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements
         //testSessionFragment.setNavigationCallback(this);
         switchFragment(testSessionFragment, null);
         //mController.recordTestSessionAccessed(getApplicationContext(), sessionId);
+
     }
 
     /**

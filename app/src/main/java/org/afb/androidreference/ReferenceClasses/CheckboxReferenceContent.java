@@ -12,8 +12,8 @@ import org.afb.androidreference.R;
  * Created by wbreu on 4/26/2017.
  */
 
-public class CheckbockReferenceContent extends BaseReferenceItemContent {
-    public CheckbockReferenceContent(Context context, String subtitle, String description) {
+public class CheckboxReferenceContent extends BaseReferenceItemContent {
+    public CheckboxReferenceContent(Context context, String subtitle, String description) {
         super(context, subtitle, description);
     }
 
