@@ -22,17 +22,17 @@
     android:orientation="vertical">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="hello"
-            android:textAppearance="@style/TextAppearance.AppCompat" />
-    </RelativeLayout>
+        <!--<TextView-->
+            <!--android:id="@+id/description"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="hello"-->
+            <!--android:textAppearance="@style/TextAppearance.AppCompat" />-->
+    <!--</RelativeLayout>-->
 
     <ListView
         android:id="@+id/list"

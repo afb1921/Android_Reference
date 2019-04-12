@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:ignore="MergeRootFrame">
+    tools:ignore="MergeRootFrame"
+    android:importantForAccessibility="no">
 
     <LinearLayout
         android:id="@+id/focus_order_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:baselineAligned="false"
+        android:focusable="false"
         android:orientation="horizontal"
         android:weightSum="2">
 
@@ -26,14 +28,18 @@
                 android:id="@+id/name_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="true"
+                android:importantForAccessibility="yes"
                 android:text="Name:"
                 android:textColor="@android:color/black"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:accessibilityHeading="true"/>
 
             <TextView
                 android:id="@+id/name_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="true"
                 android:text="Bob"
                 android:textColor="@android:color/black" />
 
@@ -41,14 +47,17 @@
                 android:id="@+id/location_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="true"
                 android:text="Location:"
                 android:textColor="@android:color/black"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:accessibilityHeading="true"/>
 
             <TextView
                 android:id="@+id/location_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="true"
                 android:text="Washington, DC"
                 android:textColor="@android:color/black" />
         </LinearLayout>
@@ -58,12 +67,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:focusable="false"
+            android:importantForAccessibility="no"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/phone_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="true"
                 android:text="Phone:"
                 android:textColor="@android:color/black"
                 android:textStyle="normal|bold" />
@@ -72,21 +84,26 @@
                 android:id="@+id/phone_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="true"
                 android:text="123-867-5309"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:accessibilityHeading="true"/>
 
             <TextView
                 android:id="@+id/email_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="true"
                 android:text="Email:"
                 android:textColor="@android:color/black"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:accessibilityHeading="true"/>
 
             <TextView
                 android:id="@+id/email_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="true"
                 android:text="bob@example.com"
                 android:textColor="@android:color/black" />
 

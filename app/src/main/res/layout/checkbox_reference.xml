@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:id="@+id/checkbox_reference">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/checbox_text"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+
     <CheckBox
         android:text="Checkbox Label"
         android:layout_width="match_parent"

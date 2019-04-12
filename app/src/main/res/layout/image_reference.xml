@@ -1,9 +1,25 @@
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/image_reference"
-    style="?android:attr/textAppearanceLarge"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:textIsSelectable="true"
-    android:src="@drawable/afblogo"
-    android:contentDescription="@string/photo1_content_description" />
+    android:weightSum="1"
+    android:importantForAccessibility="no"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/image_text"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+
+    <ImageView
+        android:id="@+id/image_reference"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:textIsSelectable="true"
+        android:src="@drawable/afblogo"
+        android:contentDescription="@string/photo1_content_description" />
+</LinearLayout>

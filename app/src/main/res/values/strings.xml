@@ -14,5 +14,8 @@
         <item>Item 11</item>
         <item>Item 12</item>
     </array>
-    <string name="photo1_content_description">Steph Curry Fires a game-winning shot to beat the buzzer</string>
+    <string name="photo1_content_description">AFB logo</string>
+    <string name="checbox_text">Checkboxes are pretty simple. They need a label which is built into the widget and they should announce whether they are checked or not checked.</string>
+    <string name="image_text">Images just need to have a content description to provide a label.</string>
+    <string name="fab_text">Buttons that are regularly used such as floating action buttons should appear at the top of the focus order. If not, screen reader users will have to navigate all the way to the bottom of the screen to find the control.</string>
 </resources>

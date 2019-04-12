@@ -46,7 +46,7 @@ public class FabReferenceContent extends BaseReferenceItemContent {
                 info.addAction(
                         new AccessibilityNodeInfoCompat.AccessibilityActionCompat(
                                 AccessibilityNodeInfoCompat.ACTION_LONG_CLICK,
-                                "do something")
+                                "Refresh the list")
                 );
             }
         });
